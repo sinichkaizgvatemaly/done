@@ -275,4 +275,26 @@ tr{
 }
 
 
+#header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px;
+	background-color: transparent; /* Исходный прозрачный фон */
+	transition: background-color 0.3s ease; /* Плавное изменение фона */
+	z-index: 1000;
+	min-height: 60px; /* Минимальная высота */
+ }
+ 
+ #header h1 {
+	font-size: var(--font-size-big-media); /* Увеличиваем шрифт */
+	margin: 0;
+ }
+ 
+ #header.scrolled {
+	background-color: rgba(0, 0, 0, 0.7); /* Темный фон при прокрутке */
+ }
+
+
 
