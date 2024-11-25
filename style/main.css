@@ -1,0 +1,492 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+html,
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+body {
+	background-image: url(../img/back.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: -1;
+}
+/* ============================================================================================================ */
+/* variables */
+:root {
+	--primary-color: #3498db; 
+	--secondary-color: #2ecc71;
+	--color-menu-link: #fff;
+	--color-menu-link-hover: #B59571;;
+	--font-size: 16px;
+	--font-size-big:28px
+}
+/* ============================================================================================================ */
+
+#header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 20px;
+	background-color: transparent; /* Исходный прозрачный фон */
+	transition: background-color 0.3s ease; /* Плавное изменение фона */
+	z-index: 1000;
+	min-height: 100px; /* Минимальная высота */
+ }
+ 
+ #header h1 {
+	font-size: 32px; /* Увеличиваем шрифт */
+	margin: 0;
+ }
+ 
+ #header.scrolled {
+	background-color: rgba(0, 0, 0, 0.7); /* Темный фон при прокрутке */
+ }
+ 
+ 
+ 
+ /* ============================================================================================================ */
+
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+.language-switcher label {
+    margin-right: 5px;
+}
+.language-switcher select {
+    padding: 10px;
+    border: 2px solid transparent;
+    border-radius: 0;
+    background-color: transparent;
+    color: var(--color-menu-link);
+    font-size: var(--font-size);
+    appearance: none;
+    outline: none;
+    z-index: 7;
+}
+.language-switcher select:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.language-switcher select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+.menu-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex-direction: row;
+}
+.menu-item {
+    margin: 0 15px;
+    padding: 10px;
+}
+.menu-link {
+    color: var(--color-menu-link);
+    text-decoration: none;
+    padding: 10px 15px;
+    display: block;
+    background-color: transparent;
+}
+.menu-link:hover {
+    color: var(--color-menu-link-hover);
+}
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 7;
+}
+.burger .line {
+    height: 3px;
+    width: 25px;
+    background-color: var(--color-menu-link);
+    margin: 4px 0;
+}
+.image-link-geo img,
+.image-link-instagram img,
+.image-link-facebook,
+.image-link-tel img,
+.logo img {
+	fill: white;
+	filter: brightness(0) invert(1);
+    transition: 0.3s ease;
+}
+.image-link-geo:hover img {
+    content: url(../img/geo2.png);
+}
+.image-link-instagram:hover img {
+    content: url(../img/insta2.png);
+}
+.image-link-tel:hover img {
+    content: url(../img/tel2.png);
+}
+.image-link-facebook:hover img {
+    content: url(../img/facebook2.png);
+}
+.logo:hover img {
+    content: url(../img/logo2.png);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+}
+
+h2 {
+    font-size: var(--font-size-big);
+    font-weight: bold;
+}
+
+p {
+    font-weight: 400;
+    font-size: var(--font-size);
+}
+
+/* about-block============================================================= */
+.about-block {
+	background-color: rgba(0, 0, 0, 0.7);
+	padding: 20px; /* Отступы внутри блока */
+	border-radius: 10px; /* Скругленные углы */
+	color: white; /* Белый цвет текста */
+	max-width: 1200px;
+	text-align: center; /* Центрирование текста */
+	box-sizing: border-box; /* Учет отступов и границ */
+	font-size: 18px; /* Общий размер шрифта */
+}
+
+.about {
+	position: absolute; /* Фиксированное положение */
+	top: 20vh; /* Отступ сверху */
+	left: 50%; /* Центрирование по горизонтали */
+	transform: translateX(-50%); /* Сдвиг для точного центрирования */
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8); /* Тень для блока */
+	width: 100%;
+	max-width: 1200px; /* Ограничиваем максимальную ширину */
+	z-index: 2; /* Выводим поверх других элементов */
+	padding: 20px; /* Внутренний отступ */
+	box-sizing: border-box; /* Учитываем отступы в размеры блока */
+	display: flex; /* Гибкое расположение */
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+
+
+.about-menu {
+	position: absolute; /* Фиксированное положение */
+	top: 20vh; /* Отступ сверху */
+	left: 50%;
+	transform: translateX(-50%);
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8); /* Тень для блока */
+	width: 100%;
+	max-width: 1200px; /* Ограничиваем максимальную ширину */
+	z-index: 2; /* Выводим поверх других элементов */
+}
+
+/* Линия под заголовком */
+.line {
+	width: 100px;
+	height: 3px;
+	background-color: white;
+	margin: 10px auto;
+}
+
+/* Текст в блоке about-menu */
+#about-menu-text {
+	color: white;
+	line-height: 1.6;
+	margin-top: 10px;
+}
+
+/* Заголовки */
+h2 {
+	font-size: 2em; /* Крупный шрифт только для заголовков */
+	color: white;
+}
+
+/* Текст в блоке about */
+#about-description {
+	line-height: 1.6;
+	color: white;
+}
+
+/* Заголовок в блоке about */
+#about-title {
+	font-size: 2em; /* Крупный шрифт для заголовка */
+	color: white;
+}
+
+
+
+/* ====================================================================== */
+
+
+
+
+
+
+
+
+
+
+.bar {
+    border: 1px solid #888;
+    padding: 15px;
+	 background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.bar a {
+    margin-right: 15px;
+}
+.bar a:last-child {
+    margin-right: 0;
+}
+
+
+
+
+.menu-header {
+	font-size: 22px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.menu-header .capital {
+	text-transform: uppercase; 
+	letter-spacing: 1px;
+}
+.line {
+	width: 50px;
+	height: 3px;
+	background-color: white;
+	margin-top: 5px;
+}
+
+
+
+
+
+
+.line {
+    width: 59px;
+    height: 3px;
+    background-color: #B59571;
+}
+
+.capital {
+    color: black;
+}
+/* ============================================================================= */
+/* Общий стиль контейнера */
+.our-menu {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 20px; /* Расстояние между элементами */
+	padding: 20px;
+}
+
+/* Стиль для карточки */
+.rectangle {
+	position: relative;
+	background: #f9f9f9; /* Нежный светлый фон */
+	border: 2px solid #ddd; /* Светлая обводка */
+	border-radius: 12px; /* Скругленные углы */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+	overflow: hidden; /* Скрыть выходящие элементы */
+	transition: transform 0.3s ease, box-shadow 0.3s ease; /* Анимация при наведении */
+	width: 350px; /* Задаем фиксированную ширину */
+	text-align: center;
+}
+
+/* Эффект при наведении на карточку */
+.rectangle:hover {
+	transform: translateY(-5px); /* Небольшое поднятие */
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Более заметная тень */
+	border-color: #aaa; /* Более яркая обводка */
+}
+
+/* Стили для ссылки с изображением */
+.bar-menu img {
+	width: 100%; /* Картинка полностью вписывается в контейнер */
+	height: auto; /* Сохраняет пропорции */
+	border-bottom: 2px solid #ddd; /* Разделительная линия под изображением */
+	transition: opacity 0.3s ease; /* Анимация прозрачности */
+}
+
+/* Эффект на изображении при наведении */
+.bar-menu:hover img {
+	opacity: 0.9; /* Лёгкое затемнение */
+}
+
+/* Заголовок и текст */
+.menu-file {
+	padding: 20px 10px; /* Внутренние отступы */
+	background: #fff; /* Фон заголовка */
+}
+
+.menu-file h2 {
+	font-size: 18px;
+	color: #333;
+	margin: 0;
+	transition: color 0.3s ease;
+}
+
+/* Линия под заголовком */
+.menu-file .line {
+	margin: 10px auto;
+	width: 50px;
+	height: 3px;
+	background: #333;
+	border-radius: 2px;
+	transition: background-color 0.3s ease;
+}
+
+/* Эффект при наведении на карточку */
+.rectangle:hover h2 {
+	color: #555; /* Изменение цвета текста */
+}
+
+.rectangle:hover .line {
+	background-color: #555; /* Изменение цвета линии */
+}
+
+ 
+
+
+/* ============================================================================= */
+
+footer {
+    background-color: #333333;
+    color: var(--color-menu-link);
+    padding: 20px;
+    text-align: center;
+    font-size: var(--font-size);
+    position: relative;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+
+.footer-links {
+    margin: 10px 0;
+}
+
+.footer-links a {
+    color: var(--color-menu-link);
+    text-decoration: none;
+    margin: 0;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-menu-link-hover);
+}
+
+
+/*=============================================================================================================================*/
+.scroll-container {
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+    padding: 20px;
+}
+
+.scroll-container img {
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.scroll-content {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    white-space: nowrap;
+}
+
+.scroll-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #333333;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.scroll-button:hover {
+    background-color: #555555;
+}
+
+.scroll-left {
+    position: absolute;
+    left: 10px;
+}
+
+.scroll-button:active {
+    background-color: #777777;
+    transform: translateY(-50%) scale(0.95);
+}
+
+.scroll-right {
+    position: absolute;
+    right: 10px;
+}
+
+.container {
+    width: 100%;
+    box-sizing: border-box;
+}

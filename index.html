@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="lt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <meta name="description" content="Thai House - Restoranas tailandietiško maisto Vilniuje">
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <title>Thai House - Tailandietiška virtuvė Vilniuje</title>
+    <link rel="stylesheet" href="style/main.css">
+	 <link rel="stylesheet" href="style/animation.css">
+	 <link rel="stylesheet" href="style/modal.css">
+	 <link rel="stylesheet" href="style/media.css">
+</head>
+
+<body>
+    <div class="container">
+        <header id="header" class="header">
+                <div class="header-container">
+                    <nav class="menu">
+                        <div class="language-switcher">
+                            <select id="language" onchange="changeLanguage(this.value)">
+                                <option value="lt">LT</option>
+                                <option value="en">EN</option>
+                                <option value="ua">UA</option>
+                            </select>
+                        </div>
+                        <a href="index.html" class="logo">
+                            <img src="img/logo.png" alt="logo Thai House" width="80" height="80">
+                        </a>
+                        <div class="burger" id="burger">
+                            <div class="line"></div>
+                            <div class="line"></div>
+                            <div class="line"></div>
+                        </div>
+
+                  
+								<div class="modal-container">
+									<div class="modal" id="hours-modal">
+										 <div class="modal-content">
+											  <span class="close-button">&times;</span>
+											  <img src="img/logo.png" alt="Logo" class="modal-logo" width="100" height="100">
+											  <h3 data-i18n="working-hours">Darbo Valandos</h3>
+											  <table class="table">
+													<tr>
+														 <th data-i18n="day">Diena</th>
+														 <th data-i18n="working-hours">Darbo laikas</th>
+													</tr>
+													<tr>
+														 <td data-i18n="monday">Pirmadienis</td>
+														 <td data-i18n="closed">Uždaryta</td>
+													</tr>
+													<tr>
+														 <td data-i18n="tuesday">Antradienis</td>
+														 <td>11:00 – 22:00</td>
+													</tr>
+													<tr>
+														 <td data-i18n="wednesday">Trečiadienis</td>
+														 <td>11:00 – 22:00</td>
+													</tr>
+													<tr>
+														 <td data-i18n="thursday">Ketvirtadienis</td>
+														 <td>11:00 – 22:00</td>
+													</tr>
+													<tr>
+														 <td data-i18n="friday">Penktadienis</td>
+														 <td>11:00 – 23:00</td>
+													</tr>
+													<tr>
+														 <td data-i18n="saturday">Šeštadienis</td>
+														 <td>12:00 – 23:00</td>
+													</tr>
+													<tr>
+														 <td data-i18n="sunday">Sekmadienis</td>
+														 <td>12:00 – 22:00</td>
+													</tr>
+											  </table>
+										 </div>
+									</div>
+									<div id="myModal" class="modal">
+										 <div class="modal-content">
+											  <span class="close">&times;</span>
+											  <h2 data-i18n="contact-us">Palikite savo duomenis, mes jums paskambinsime</h2>
+							  
+											  <form id="orderForm">
+													<input type="hidden" name="access_key" value="1c6eaf83-059e-42bc-b080-46480c88fcb2">
+							  
+													<div class="input-container">
+														 <label class="label-modal" data-i18n="name" for="fullName">Vardas:</label>
+														 <div class="image-container">
+															  <img class="modal-img" src="img/modal/Vectorman.png" alt="man">
+														 </div>
+														 <input type="text" id="fullName" name="fullName" required>
+													</div>
+							  
+													<div class="input-container">
+														 <label class="label-modal" data-i18n="phone" for="phone">Telefonas:</label>
+														 <div class="image-container">
+															  <img class="modal-img" src="img/modal/Vectorph.png" alt="phone">
+														 </div>
+														 <input type="tel" id="phone" name="phone" required>
+													</div>
+							  
+													<div class="input-container">
+														 <label class="label-modal" data-i18n="email" for="email">El. paštas:</label>
+														 <div class="image-container">
+															  <img class="modal-img" src="img/modal/Vectoremail.png" alt="email">
+														 </div>
+														 <input type="email" id="email" name="email">
+													</div>
+							  
+													<div class="input-container input-container-coment">
+														 <label class="label-modal" data-i18n="your-coment" for="comment">Komentaras:</label>
+														 <textarea id="comment" name="comment" rows="4" placeholder="Įveskite tekstą"></textarea>
+													</div>
+							  
+													<label class="checkbox-label">
+														 <input data-i18n="Newsletter" type="checkbox" id="agreement" name="agreement" required>
+														 Sutinku su naujienlaiškio sąlygomis
+													</label>
+							  
+													<button class="category-button category-button-modal" data-i18n="submit" type="submit">Pateikti</button>
+											  </form>
+							  
+											  <div data-i18n="submitDone" id="successMessage">Pateikta!</div>
+											  <p id="responseMessage"></p>
+										 </div>
+									</div>
+									<div class="modal" id="contact-modal">
+										 <div class="modal-content">
+											  <span class="close-button">&times;</span>
+											  <img src="img/logo.png" alt="Logo" class="modal-logo" width="100" height="100">
+											  <h3 data-i18n="contact-information" id="contact-information">Kontaktinė informacija</h3>
+											  <a href="tel:068349830" class="image-link-tel" aria-label="Number Thai House">
+													<img src="img/tel.png" alt="tel" width="20" height="20">068349830
+											  </a>
+											  <p>Email: <a href="mailto:info@thaihouse.lt">info@thaihouse.lt</a></p>
+											  <p data-i18n="Address-Vilnius"> Adresas Vilnius
+													<a href="https://www.google.com/maps?q=Naugarduko+g.+12,+Vilnius,+03225+Vilniaus+m.+sav." target="_blank">
+														 Naugarduko g. 12, Vilnius, 03225 Vilniaus m. sav.
+													</a>
+											  </p>
+										 </div>
+									</div>
+							  </div>
+
+                        <ul class="menu-list" id="menu-list">
+                            <li class="menu-item">
+                                <a href="#our-menu" id="menu" class="menu-link" data-i18n="menu-tr" aria-haspopup="false">Meniu</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="https://wolt.com/lt/ltu/vilnius/restaurant/thai-house-naugarduko-g?srsltid=AfmBOoqIF9NFs0poB563ukx4mNWUPhQnRxaYkJNheM5_4zNECgmeVlAz" class="menu-link" target="_blank" rel="noopener noreferrer" data-i18n="delivery">Pristatymas</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="javascript:void(0)" data-i18n="reserve-table" class="menu-link reserve-table">Rezervuoti staliuką</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" id="working-hours-link" data-i18n="working-hours" class="menu-link">Darbo valandos</a>
+                            </li>
+                            <li class="menu-item">
+                                <a href="#" id="contacts-link" data-i18n="contacts" class="menu-link">Kontaktai</a>
+                            </li>
+                        </ul>
+
+                     
+
+                        <div class="bar">
+                            <a href="https://www.google.com/maps/place/THAI+HOUSE+Vilnius/@54.6770219,25.2739765,17z/data=!3m1!4b1!4m6!3m5!1s0x46e7196283d1f5af:0xc9c9062450026c8f!8m2!3d54.6770219!4d25.2765514!16s%2Fg%2F11fl5nqrv7?entry=ttu&g_ep=EgoyMDI0MTAyMi4wIKXMDSoASAFQAw%3D%3D" class="image-link-geo" aria-label="Mūsų geografinė vieta">
+                                <img src="img/geo.png" alt="geo" width="20" height="20">
+                            </a>
+                            <a href="https://www.instagram.com/thaihouse.lt/" class="image-link-instagram" aria-label="Instagram Thai House" target="_blank" rel="noopener noreferrer">
+                                <img src="img/insta.png" alt="Instagram" width="20" height="20">
+                            </a>
+                            <a href="tel:068349830" class="image-link-tel" aria-label="Number Thai House">
+                                <img src="img/tel.png" alt="tel" width="20" height="20">
+                            </a>
+                            <a href="https://www.facebook.com/ThaiHouse.lt/" class="image-link-facebook" aria-label="facebook Thai House" target="_blank" rel="noopener noreferrer">
+                                <img src="img/facebook.png" alt="facebook" width="20" height="20">
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+        </header>
+
+        <main>
+
+
+
+
+			<div class="about-block about-menu">
+				<div class="menu-header capital">
+					 <h2 data-i18n="menu-tr" id="menu">Meniu</h2>
+					 <div class="line"></div>
+				</div>
+				<p data-i18n="about-menu-text" id="about-menu-text">„Thai House“ meniu siūlo išskirtinį patiekalų pasirinkimą, atspindintį unikalų saldaus, rūgštaus, aštraus ir sūraus skonių derinį, būdingą tajų virtuvei. Čia galite mėgautis tradiciniu Tom Yum sriuba su jūrų gėrybėmis ir skaniu Pad Thai – keptais makaronais su daržovėmis ir riešutais. Taip pat siūlome daugybę vegetariškų patiekalų, pagamintų iš šviežių vietinių ingredientų, kurie suteikia patiekalams gilų skonį ir malonų aromatą. Patiekalų aštrumą galime pritaikyti pagal kiekvieno kliento pageidavimus. Desertams siūlome lipnų ryžių pudingą su mango ir kokosų pienu, taip pat egzotiškus gėrimus, tokius kaip tajų arbata su pienu ir gaivų kokosų vandenį.</p>
+		  </div>
+
+		
+		  
+
+
+			
+		  <div class="image-scroll-container">
+			<div class="about-block about">
+			  <h2 id="about-title" data-i18n="about-title">Tailandiečių restoranas Vilniuje</h2>
+			  <div class="line"></div>
+			  <p id="about-description" data-i18n="about-description"></p>
+			</div>
+			
+			<div class="image-gallery-scroll">
+			  <div class="image-container-scroll left">
+				 <img src="img/animation/scroll1.png" alt="Image 1">
+			  </div>
+			  <div class="image-container-scroll right">
+				 <img src="img/animation/scroll2.png" alt="Image 2">
+			  </div>
+			  <div class="image-container-scroll left">
+				 <img src="img/animation/scroll3.png" alt="Image 3">
+			  </div>
+			  <div class="image-container-scroll right">
+				 <img src="img/animation/scroll4.png" alt="Image 4">
+			  </div>
+			  <div class="image-container-scroll left">
+				 <img src="img/animation/scroll5.png" alt="Image 5">
+			  </div>
+			  <div class="image-container-scroll right">
+				 <img src="img/animation/scroll6.png" alt="Image 6">
+			  </div>
+			</div>
+		 </div>
+		 
+		 
+
+		  
+		  
+		  
+		  
+
+            <div id="our-menu" class="our-menu">
+                <div class="rectangle">
+                    <a class="menu-file" href="bar.html">
+                        <img src="img/Menu-img.png" alt="Menu" height="240" width="336">
+                    </a>
+                    <div class="menu-file second">
+                        <h2 data-i18n="main-menu">Pagrindinis meniu</h2>
+                        <div class="line"></div>
+                    </div>
+                </div>
+					 
+                <div class="rectangle">
+                    <a class="bar-kitchen" href="menu.html">
+                        <img src="img/drinks.png" alt="Drinks" height="240">
+                    </a>
+                    <div class="menu-file second">
+                        <h2 data-i18n="drinks">Gėrimų meniu</h2>
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-container" id="scrollContainer">
+                <button class="scroll-button scroll-left">&#10094;</button>
+                <div class="scroll-content" style="overflow: auto; white-space: nowrap;">
+                    <img src="scroll-container/scroll1.jpg" alt="scroll Image 1" width="300" height="300">
+                    <img src="scroll-container/scroll2.jpg" alt="scroll Image 2" width="300" height="300">
+                    <img src="scroll-container/scroll3.jpg" alt="scroll Image 3" width="300" height="300">
+                    <img src="scroll-container/scroll4.jpg" alt="scroll Image 4" width="300" height="300">
+                    <img src="scroll-container/scroll5.jpg" alt="scroll Image 5" width="300" height="300">
+                    <img src="scroll-container/scroll6.jpg" alt="scroll Image 6" width="300" height="300">
+                    <img src="scroll-container/scroll7.jpg" alt="scroll Image 7" width="300" height="300">
+                    <img src="scroll-container/scroll8.jpg" alt="scroll Image 8" width="300" height="300">
+                    <img src="scroll-container/scroll9.jpg" alt="scroll Image 9" width="300" height="300">
+                    <img src="scroll-container/scroll10.jpg" alt="scroll Image 10" width="300" height="300">
+                </div>
+                <button class="scroll-button scroll-right">&#10095;</button>
+            </div>
+            <div class="drinks-logo">
+                <img src="img/chang.jpg" alt="Chang beer logo" width="50">
+                <img src="img/mekhong.png" alt="Mekhong whiskey logo" width="50">
+                <img src="img/Singha.webp" alt="Singha beer logo" width="50">
+            </div>
+
+
+			  
+
+
+        </main>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <p data-i18n="social-media">Sekite mus socialinėje žiniasklaidoje, kad gautumėte naujienų!</p>
+            <div class="footer-links">
+                <a href="#" data-i18n="about-us" id="open-modal">Apie mus</a>
+                <div class="modal" id="contact-about">
+                    <div class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <p data-i18n="vision">
+                            Tailandietiško restorano „Thai House“ savininkas svajoja sukurti unikalią erdvę, kurioje svečiai galėtų mėgautis autentiška Tailando atmosfera.
+                            <br> Siekiama pasiūlyti autentiškus tailandietiškus patiekalus, pagamintus iš šviežių vietinių ingredientų, kad kiekvienam svečiui būtų suteikta
+                            <br> autentiška tajų virtuvės patirtis.
+                            <br> Jo idėjos apima:
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+	 <script src="js/header.js"></script>
+    <script src="js/language.js"></script>
+	 <script src="js/animation.js"></script>
+</body>
+
+</html>
