@@ -67,7 +67,6 @@
 		 display: flex;
 		 justify-content: center;
 		 align-items: center;
-		 height: 100px;
 	}
 	.bar{
 		 display: none;
@@ -284,7 +283,7 @@ tr{
 	background-color: transparent; /* Исходный прозрачный фон */
 	transition: background-color 0.3s ease; /* Плавное изменение фона */
 	z-index: 1000;
-	min-height: 60px; /* Минимальная высота */
+	max-height: 70px; /* Минимальная высота */
  }
  
  #header h1 {
