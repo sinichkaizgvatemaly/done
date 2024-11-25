@@ -57,10 +57,10 @@ body {
 	left: 0;
 	width: 100%;
 	padding: 20px;
-	background-color: transparent;
-	transition: background-color 0.3s ease;
+	background-color: transparent; /* Исходный прозрачный фон */
+	transition: background-color 0.3s ease; /* Плавное изменение фона */
 	z-index: 1000;
-	min-height: 150px;
+	min-height: 100px; /* Минимальная высота */
  }
  
  #header h1 {
@@ -71,6 +71,13 @@ body {
  #header.scrolled {
 	background-color: rgba(0, 0, 0, 0.7); /* Темный фон при прокрутке */
  }
+ p[data-i18n="Address-Vilnius"] {
+	display: block !important;
+	color: black !important;
+	font-size: 16px !important;
+	visibility: visible !important;
+}
+
  
  
  
