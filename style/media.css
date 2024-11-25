@@ -67,6 +67,7 @@
 		 display: flex;
 		 justify-content: center;
 		 align-items: center;
+		 height: 100px;
 	}
 	.bar{
 		 display: none;
@@ -271,29 +272,19 @@ tr{
 	#about-menu-text {
 		 font-size: var(--font-size-media);
 	}
+
+	.image-link-geo img,
+	.image-link-instagram img,
+	.image-link-facebook,
+	.image-link-tel img,
+	.logo img {
+		fill: black;
+		filter: brightness(0);
+		 transition: 0.3s ease;
+	}
+	
+
 }
-
-
-#header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	padding: 20px;
-	background-color: transparent; /* Исходный прозрачный фон */
-	transition: background-color 0.3s ease; /* Плавное изменение фона */
-	z-index: 1000;
-	max-height: 70px; /* Минимальная высота */
- }
- 
- #header h1 {
-	font-size: var(--font-size-big-media); /* Увеличиваем шрифт */
-	margin: 0;
- }
- 
- #header.scrolled {
-	background-color: rgba(0, 0, 0, 0.7); /* Темный фон при прокрутке */
- }
 
 
 
