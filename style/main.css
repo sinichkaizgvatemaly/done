@@ -57,10 +57,10 @@ body {
 	left: 0;
 	width: 100%;
 	padding: 20px;
-	background-color: transparent; /* Исходный прозрачный фон */
-	transition: background-color 0.3s ease; /* Плавное изменение фона */
+	background-color: transparent;
+	transition: background-color 0.3s ease;
 	z-index: 1000;
-	min-height: 100px; /* Минимальная высота */
+	min-height: 150px;
  }
  
  #header h1 {
